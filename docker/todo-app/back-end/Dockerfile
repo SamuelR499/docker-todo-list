@@ -1,5 +1,8 @@
-FROM node:14-alpine
-WORKDIR /todo-app
-COPY node_modules.tar.gz ./todo-app
+FROM node:14-alpine AS todobackend
+
+ADD ./node_modules.tar.gz /
+COPY . /
+
 EXPOSE 3001
+
 CMD [ "npm", "start" ]
