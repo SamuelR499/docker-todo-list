@@ -1,7 +1,8 @@
 FROM node:14-alpine AS todofrontend
 
-ADD ./node_modules.tar.gz / 
-COPY  . /
+WORKDIR /app
+ADD ./node_modules.tar.gz . 
+COPY  . .
 
 EXPOSE 3000
 
